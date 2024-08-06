@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+.card {
+    width: 120px;
+    height: 190px;
+    @include flex($direction: column, $gap: 5px);
+    background-color: $fourth-color;
+    border-radius: 10px;
+    img {
+        height: 70%;
+        padding: 10%;
+    }
+    &__text {
+        color: $text;
+        padding: 0 10% 10% 10%;
+        overflow: hidden;
+        &-primary {
+            @include font($third-font, 12px, 400);
+            white-space: nowrap;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            word-break: break-all;
+
+        }
+        &-secondary {
+            @include font($third-font, 10px, 400);
+            white-space: nowrap;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            word-break: break-all;
+        }
+        &--evaluate {
+            @include font($third-font, 11px, 400);
+            padding-top: 5px;
+            &-extra {
+                @include font($third-font, 10px, 400);
+                color : $star-color;
+            }
+        }
+    }
+
+}

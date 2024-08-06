@@ -1,0 +1,88 @@
+@use "../abstracts/" as *;
+
+.home {
+    width: 95%;
+    overflow: hidden;
+    height: 90%;
+    margin: 2% 0 0 2%;
+    background-color: $fifth-color;
+    border-radius: 10px;
+    @include flex();
+    @include tablet {
+        width: 95%;
+        height: 95%;
+    }
+    @include mobile {
+        margin: 4%;
+        width: 90%;
+        height: 95%;
+    } 
+    &__sidebar {
+        width: 20%;
+        @include tablet {
+            width: 15%;
+        }
+    }
+    &__main {
+        width: 80%; 
+        padding: 2%;
+        @include tablet {
+            width: 90%;
+            height: 90%;
+        }
+        @include mobile {
+            width: 98%;
+        }
+        &__top {
+            margin-bottom: 3%;
+            @include tablet {
+                margin-bottom: 5%;
+            }
+        }
+        &__quote {
+            @include flex($justify: space-between);
+            height: 25%;
+            padding-right: 3%;
+            @include mobile {
+                @include flex($direction: column);
+
+            }
+        }
+        &__recommen {
+            padding-top: 3%;
+            @include tablet {
+                padding-top: 5%;
+            }
+            &-primary {
+                padding-bottom: 5px;
+                @include font($secondary-font,28px,600);
+                color: $text;
+            }
+            &-text {
+                @include font($third-font,20px,400);
+                color: $text;
+                padding-top: 2%;
+                padding-bottom: 1%;
+            }
+            &-recent {
+                @include font($third-font,20px,400);
+                color: $text;
+            }
+            &-card {
+                @include flex($direction: row, $gap: 30px);
+                overflow-x: scroll;
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
+            }
+        }
+    }
+}
+.scroll {
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        width: 0;
+    }
+}

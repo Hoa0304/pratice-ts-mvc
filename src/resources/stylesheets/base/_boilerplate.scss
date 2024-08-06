@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 100%;
+    overflow: hidden;
+    padding-top: 10px;
+}
+#root{
+    height: 100vh;
+}
+.hidden {
+    display: none;
+}

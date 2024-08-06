@@ -1,0 +1,107 @@
+@use '../abstracts' as *;
+
+.titleCol {
+    width: 45%;
+}
+.categoryCol {
+    width: 20%;
+}
+.availabilityCol{
+    width: 15%;
+}
+.statusCol {
+    width: 10%;
+}
+.title {
+    margin-left: 5%;
+    @include flex($gap:30px);
+    img {
+        width: 80px;
+        height: 110px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    figcaption {
+        @include flex($direction: column,$justify: center);
+        p {
+            padding-top: 10px;
+            @include font($primary-font, 9px, 600);
+            @include tablet {
+                @include font($primary-font, 8px, 600);
+            }
+        }
+    }
+}
+.name {
+    @include font($primary-font,17px, 600);
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    padding-bottom: 2px;
+    @include tablet {
+        @include font($primary-font, 15px, 600);
+    }
+}
+.extra {
+    @include font($primary-font, 12px, 600);
+    width: 80px;
+            display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+    @include tablet {
+        @include font($primary-font, 10px, 600);
+    }
+}
+.category {
+    @include flex($direction: column,$justify: center);
+    .extra {
+        padding-top: 15px;
+    }
+}
+.availability {
+    @include flex($direction: column,$align: flex-start,$gap: 10px);
+    &__wrap {
+        @include flex($direction: row,$gap: 7px);
+    }
+}
+.status {
+    @include flex($direction: column,$align: flex-start,$gap: 10px);
+    span {
+        width: 60%;
+        height: 22px;
+        background-color: $status;
+        color: $fourth-color;
+        border-radius: 6px;
+        @include flex($align:center,$justify:center);
+    }
+    &__location {
+        @include flex($direction: row,$align:end,$gap: 7px);
+    }
+}
+.btn {
+    padding-right: 20%;
+    padding-top: 30%;
+    @include flex($direction: column, $gap: 10px);
+    
+    button {
+        width: 95%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+    }
+}
+
+button {
+    height: 25px;
+    background-color: $fourth-color;
+    border: 1px solid $primary-text;
+    color: $primary-text;
+    border-radius: 6px;
+}

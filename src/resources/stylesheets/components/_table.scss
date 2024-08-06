@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.table {
+    border-collapse: collapse;
+    width: 97%;
+    margin-top: 5%;
+    color: $text;
+    overflow: scroll;
+
+    &__head {
+        @include font($primary-font,16px,700);
+        th {
+            text-align: start;
+        }
+    }
+    &__body {
+        height: 140px;
+        background-color: $fourth-color;
+    }
+    tr{
+        padding: 10px 0;
+    }
+}

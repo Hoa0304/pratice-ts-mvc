@@ -1,0 +1,78 @@
+@use "../abstracts/" as *;
+
+.quote {
+    background-image: $gradient;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 1% 2%;
+    justify-content: space-around;
+    flex-direction: column;
+    transition: opacity 0.5s ease-in-out;
+    @include tablet {
+        width: 35%;
+    }
+    
+    &--text {
+        @include font($third-font,18px,500);
+        color: $fourth-color;
+        padding-top: 5px;
+        @include tablet {
+            @include font($third-font,15px,500);
+        }
+        @include mobile {
+
+        }
+    }
+    &-status {
+        @include font($primary-font,14px,400);
+        color: $fourth-color;
+        @include tablet {
+            @include font($primary-font,12px,500);
+        }
+    }
+    &--author {
+        @include font($primary-font,14px,500);
+        color: $fourth-color;
+        align-self: flex-end;
+        @include tablet {
+            @include font($primary-font,12px,500);
+        }
+    }
+    &--index {
+        @include flex($direction: row,$gap: 7px);
+        &-circle {
+            width: 8px;
+            height: 8px;
+            border: 1px solid $fourth-color;
+            border-radius: 50%;            
+        }
+        &-circle:nth-child(1) {
+            background-color: $fourth-color;
+        }
+    }
+    &:nth-child(2) {
+        .quote--index-circle:nth-child(2) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+    &:nth-child(3) {
+        .quote--index-circle:nth-child(3) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+    &:nth-child(4) {
+        .quote--index-circle:nth-child(4) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+}

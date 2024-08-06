@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.mana {
+    position: relative;
+    overflow: hidden;
+    height: 90%;
+    width: 95%;
+    margin: 2% 0 0 2%;
+    background-color: $fifth-color;
+    border-radius: 10px;
+    @include flex();
+        @include tablet {
+        width: 95%;
+        height: 95%;
+    }
+    @include mobile {
+        margin: 4%;
+        width: 90%;
+        height: 95%;
+    }
+    &__sidebar {
+        width: 20%;
+        @include tablet {
+            width: 15%;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    &__form,
+    &__editForm{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    &__main {
+        width: 100%;
+        padding: 2%;
+        overflow: hidden;
+        @include tablet {
+            width: 90%;
+            height: 90%;
+        }
+        @include mobile {
+            width: 98%;
+        }
+        &-header {
+            margin-bottom: 2%;
+            @include tablet {
+                margin-bottom: 5%;
+            }
+        }
+        &-body {
+            height: 95%;
+            overflow: scroll;
+            &::-webkit-scrollbar{
+                width: 0;
+            }
+        }
+    }
+}

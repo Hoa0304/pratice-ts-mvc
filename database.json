@@ -1,0 +1,151 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "image": "/think.bf821c09.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Computer Science",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    },
+    {
+      "id": "2",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Harry Potter and The Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "year": "2000",
+      "category": "Computer Science",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    },
+    {
+      "id": "abf9",
+      "image": "/react.3fc66731.svg",
+      "name": "ADFDSAF",
+      "author": "ÁDFASDF",
+      "year": "ÁDFADSF",
+      "category": "ADFASDF",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": true,
+      "borrowed": true,
+      "location": "CS A-15",
+      "customer": "yuui"
+    },
+    {
+      "id": "0b7d",
+      "image": null,
+      "name": "n cjs",
+      "author": "sfgtdhg",
+      "year": "20076",
+      "category": "43dfgdfgdf",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "35stgeers"
+    },
+    {
+      "id": "c627",
+      "image": null,
+      "name": "fgsgv",
+      "author": "ửtert",
+      "year": "4wy5ujytr",
+      "category": "rưeyjhteh",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "rthertyhe"
+    },
+    {
+      "id": "01a5",
+      "image": null,
+      "name": "dsgàdsfa",
+      "author": "sdfgd",
+      "year": "sadfg",
+      "category": "adfasdf",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS A-15"
+    }
+  ],
+  "users": [
+    {
+      "id": "97c3",
+      "name": "Hoa Tran ",
+      "email": "chtran03042004@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "a93b",
+      "name": "NguyenDat",
+      "email": "tranthicamhoa2k4s@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "1702",
+      "name": "Your Reg. No.",
+      "email": "Your email",
+      "password": "Your password"
+    },
+    {
+      "id": "5960",
+      "name": "Your Reg. No.",
+      "email": "Your email",
+      "password": "Your password"
+    },
+    {
+      "id": "8ff9",
+      "name": "1",
+      "email": "1",
+      "password": "1"
+    },
+    {
+      "id": "4f73",
+      "name": "1",
+      "email": "1",
+      "password": "1"
+    },
+    {
+      "id": "eaad",
+      "name": "1",
+      "email": "1",
+      "password": "1"
+    },
+    {
+      "id": "0b3f",
+      "name": "1",
+      "email": "1",
+      "password": "1"
+    },
+    {
+      "id": "b859",
+      "name": "1",
+      "email": "2",
+      "password": "34"
+    },
+    {
+      "id": "5948",
+      "name": "1234",
+      "email": "hoa@gmail.com",
+      "password": "Dat@12345"
+    },
+    {
+      "id": "c739",
+      "name": "1234",
+      "email": "hoa@gmail.com",
+      "password": "Dat@12345678"
+    }
+  ]
+}

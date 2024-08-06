@@ -1,0 +1,25 @@
+$primary-font: 'Inter-ExtraLight';
+$secondary-font: 'Inter-SemiBold';
+$third-font: 'Inter-Regular';
+
+$primary-color: #000;
+$secondary-color: #8A8A8A;
+$third-color: #FA7C54;
+$fourth-color: white;
+$fifth-color: #F3F3F7;
+$border-color: #DCDCDC;
+$background-color: #F7F7FA;
+$text: #4D4D4D;
+$star-color: #A7A7A7;
+$primary-text: #F76B56;
+$status: #42BB4E;
+$warning : #FED403;
+$error: #FE0000;
+$gradient: linear-gradient(140.88deg, #EB5231 -29.15%, #571FCF 151.64%),
+linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+
+$small:479px;
+$mobiles:calc($small - 1px);
+$medium: 478px;
+$extra-large:1000px;
+$tablet: calc($extra-large - 1px);

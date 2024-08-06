@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.browser {
+    width: 40%;
+    height: 5%;
+    @include flex($gap: 10px);
+    @include font($primary-font,13px,600);
+    button {
+        border: none;
+        border-radius: 20px;
+        padding: 3%;
+    }
+    &__wrapper {
+        @include flex($justify: center,$align:center);
+        width: 80px;
+        background-color: $fourth-color;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        &-arrow {
+            background-color: $fourth-color;
+            width: 17%;
+            height: 50%;
+            img {
+                width: 100%;
+                padding-bottom: 5px;
+            }
+        }
+        &-option {
+            display: none;
+        }
+    }
+    &-create {
+        @include flex($justify: center,$align:center);
+        width: 70px;
+        height: 100%;
+        background-color: $third-color;
+        color: $fourth-color;
+    }
+}

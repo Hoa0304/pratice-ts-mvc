@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+.arrival {
+    background-image: $gradient;
+    width: 65%;
+    border-radius: 10px;
+    @include flex();
+    border: 2px solid transparent;
+    border-image: linear-gradient(140.88deg, #EB5231 -29.15%, #571FCF 151.64%) 1;
+    @include tablet {
+        width: 60%;
+    }
+    &-text {
+        width: 30px;
+        writing-mode: vertical-rl;
+        text-orientation: right;
+        transform: rotate(180deg);
+        @include flex($justify:center,$align:center);
+        @include font($third-font,18px,500);
+        color: $fourth-color;
+        
+    }
+    &__wrapper {
+        @include flex($direction: row);
+        background-color: $fourth-color;
+        width: 95%;
+        border-radius: 0 10px 10px 0;
+        padding-left: 20px;
+        padding-top: 10px;
+        gap: 30px;
+        overflow: scroll;
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+        &-book {
+            border-radius: 10px;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+
+}

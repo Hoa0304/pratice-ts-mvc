@@ -1,0 +1,140 @@
+@use "../abstracts/" as *;
+
+.header {
+    @include flex($direction: row, $justify: space-between);
+    width: 100%;
+    padding-right: 3%;
+    position: relative;
+    height: 40px;
+    .menu-toggle {  
+        display: none;
+        @include mobile {
+            font-size: 40px;
+            cursor: pointer;
+            position: absolute;
+            display: inline-block;
+        }
+    }
+    &__wrapper {
+        @include flex($direction: row, $align: center, $justify: space-between);
+        background-color: $fourth-color;
+        border-radius: 20px;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+        @include mobile {
+            margin-left: 15%;
+            width: 65%;
+            @include flex($direction: row);
+        }
+        @include tablet {
+            width: 200px;
+            @include flex($direction: row);
+        }
+        &--quick {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: $background-color;
+            border: none;
+            text-align: center;
+            border-radius: 20px 0px 0px 20px;
+            @include tablet {
+                width: 50px;
+            }
+            @include mobile {
+                width: 40px;
+            }
+        }
+        &--input {
+            background-color: $fourth-color;
+            border: none;
+            outline: none;
+            @include tablet {
+                width: 50%;
+            }
+            @include mobile {
+                width: 80%;
+            }
+        }
+        &--search,
+        &--qr {
+            @include flex();
+            background-color: $fourth-color;
+            border: none;
+            border-radius: 0px 10px 10px 0px ;
+            height: 60%;
+            @include tablet {
+                width: 35px;
+            }
+            @include mobile {
+                width: 40px;
+            }
+        }
+        &--qr {
+            border-left: 1px solid $border-color;
+        }
+        img {
+            padding-top: 10%;
+            @include tablet {
+                width: 20px;
+                padding-top: 3%;
+            }
+        }
+    }
+    &__profile {
+        @include flex($direction: row, $align: center, $justify: space-between);
+        width: 125px;
+        background-color: $fourth-color;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+        position: relative;
+        @include tablet {
+            margin-right: 1%;
+        }
+        @include mobile {
+            border-radius: 50%;
+            width: 40px;
+            @include flex($direction: row, $align: center, $justify: center);
+        }
+        &--image {
+            border-radius: 50%;
+            width: 35px;
+            padding: 3px;
+        }
+        &--name {
+            @include font($third-font,14px,400);
+            color: $text;
+            white-space: nowrap;
+            padding: 1% 0 0 1%;
+            @include mobile {
+                display: none;
+            }
+        }
+        &--button {
+            background-color: $fourth-color;
+            border: none;
+            border-radius: 50%;
+            @include mobile {
+                display: none;
+            }
+        }
+        &--option {
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background-color: $fourth-color;
+            padding: 15%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+            @include font($third-font,14px,400);
+            ul {
+                @include flex($direction:column, $gap : 10px);
+            }
+            a {
+                color: $primary-color;
+            }
+            a:hover {
+                color: $primary-text;
+            }
+        }
+    }
+}

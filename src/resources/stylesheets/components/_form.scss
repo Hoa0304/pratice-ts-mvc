@@ -1,0 +1,104 @@
+@use '../abstracts' as *;
+
+.wrap {
+    margin: auto;
+    height: 100%;
+    @include flex($justify:center,$align:center);
+    .form,
+    .editForm {
+        @include flex($direction: column,$justify:center,$gap:8px);
+        background-color: $fifth-color;
+        width: 30%;
+        height: 90%;
+        border-radius: 20px;
+        border: 2px solid $primary-text;
+        @include font($third-font,15px,400);
+        color: $text;
+        padding: 3%;
+       
+        .btncancel{
+            margin-top: 0;
+            padding: 0;
+            height: 20px;
+            width: 30%;
+            align-self: center;
+        }
+        &-file {
+            position: relative;
+            align-self: flex-end;
+            text-align: center;
+            position: relative;
+            text-wrap: nowrap;
+            color: $fourth-color;
+            max-width: max-content;
+            height: auto;
+            background-color: $third-color;
+            padding: 8px;
+            border-radius: 20px;
+            z-index: 1;
+            input{
+                position: absolute;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+          &-image {
+            cursor: pointer;
+        }
+        &-input {
+            padding: 2% 5%;
+            border: none;
+            border-bottom: 2px solid $primary-text;
+            border-radius: 20px;
+            outline: none;
+        }
+        &-box {
+            @include flex($align: center);
+            label {
+                cursor: pointer;
+            }
+            input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                height: 10px;
+                width: 10px;
+                background-color: $fourth-color;
+                cursor: pointer;
+                outline: none;
+                border: 1px solid $secondary-color;
+                border-radius: 2px;
+                margin-bottom: 4px;
+            }
+            input[type="checkbox"]:hover {
+                background-color: $third-color;
+            }
+            input[type="checkbox"]:checked {
+                background-color: $third-color;
+                border: none;
+            }
+            input[type="checkbox"]:checked:after {
+                display: block;
+                @include flex($align:center,$justify: center);
+                font-family: "Font Awesome 6 Free";
+                content: "\f00c";
+                font-weight: 900;
+                font-size: 8px;
+                color: $fourth-color;
+                padding-top: 1px;
+            }
+        }
+        &-button {
+            margin-top: 20px;
+            @include button(100%,40px,$third-color,20px,none,0px);
+            @include font($primary-font,15px,700);
+            @include tablet {
+                @include font($primary-font,18px,700);
+            }
+            @include color($fourth-color);
+        }
+    }
+}
