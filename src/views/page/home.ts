@@ -1,4 +1,4 @@
-import { SideBar, Header, QuoteItem, LatestItem } from "../../views";
+import { SideBar, Header, LatestItem, quoteElements } from "../../views";
 
 export const Home = () => {
     return `
@@ -7,7 +7,7 @@ export const Home = () => {
             <div class="home__main">
                 <div class="home__main__top">${Header()}</div>
                 <div class="home__main__quote">
-                    ${QuoteItem()}
+                    ${quoteElements.join('')}
                     ${LatestItem()}
                 </div>
                 <div class="home__main__recommen">

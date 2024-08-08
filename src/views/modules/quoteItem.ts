@@ -1,21 +1,16 @@
 import { QUOTE } from "../../constants/constant";
 
-let currentQuoteIndex = 0;
-
-export const QuoteItem = (): string => {
-    const currentQuote = QUOTE[currentQuoteIndex];
-    currentQuoteIndex = (currentQuoteIndex + 1) % QUOTE.length;
-
+export const QuoteItem = (text: string, author: string): string => {
     return `
         <section class="quote hidden">
             <span class="quote--text">
                 Today's Quote
             </span>
             <p class="quote-status">
-                ${currentQuote.text}
+                ${text}
             </p>
             <span class="quote--author">
-                ${currentQuote.author}
+                ${author}
             </span>
             <div class="quote--index">
                 <div class="quote--index-circle"></div>
@@ -26,3 +21,5 @@ export const QuoteItem = (): string => {
         </section>
     `;
 };
+
+export const quoteElements = QUOTE.map((quote) => QuoteItem(quote.text, quote.author));
