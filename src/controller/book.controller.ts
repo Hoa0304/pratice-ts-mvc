@@ -1,29 +1,28 @@
 import Book from "../model/book.model";
 import BookService from "../services/book.service";
+import { ManagementView } from "../views";
 import BookView from "../views/book.views";
 import { AuthController } from "./auth.controller";
+import { HomeController } from "./home.controller";
+import { ManagementController } from "./management.controller";
 
-class LoginController {
-  private view: BookView;
-  private service: BookService;
-  private authController: AuthController;
+export class LoginController {
+  public view: BookView;
+  public service: BookService;
+  private authController: AuthController | undefined;
+  private homeController: HomeController | undefined;
+  private managementController: ManagementController | undefined;
+
   onDataChanged = (books: Book[]) => {
     this.view.displayData(books);
   };
 
-  constructor(view: BookView, service: BookService, authController: AuthController) {
-    this.view = view;
-    this.service = service;
-    this.authController = authController;
+  constructor(view: BookView, service: BookService) {
+  
+      this.view = view;
+      this.service = service;
+   
     this.flag();
-    
-  }
-
-
-
-  async handleShowEditForm() {
-    const books = await this.service.getBooks();
-    if (books) this.view.toggleFormEdit(books, this.handleEdit);
   }
 
   async handleDisplayData() {
@@ -36,54 +35,29 @@ class LoginController {
     if (book) this.onDataChanged(book);
   }
 
-  handleDeleteData(id: string) {
-    this.service.deleteBooks(id);
-  }
-
-  async handleDelete() {
-    await this.handleDisplayData();
-    const books = await this.service.getBooks();
-    if (books)
-    this.view.bindDelete(books, this.handleDeleteData);
-  }
-
-
-  handleAddBook(book: Book) {
-    this.service.addBook(book);
-  }
-
-  handleEdit(id: string, book: Book) {
-    this.service.edit(id, book);
-  }
-
-  handleSearch(key: string) {
-    this.service.searchBooks(key);
-  }
-
   flag() {
     const paths = window.location.pathname;
     console.log(paths);
     switch (paths) {
+      
       case '/home':
-        this.view.changeQuote();
+        this.homeController = new HomeController();
         this.view.toggleOptions();
-        this.handleDisplayData();
         this.view.logout();
         break;
       case '/management':
         this.handleDisplayData();
-        this.view.toggleForm();
-        this.view.bindAddBook(this.handleAddBook);
+        this.view.toggleOptions();
         this.view.logout();
-        this.handleDelete();
-        this.handleShowEditForm();
+        this.managementController = new ManagementController(new BookView(), new BookService(),new ManagementView());
         break;
     }
     if(paths === '/home' || paths === '/management'){
       this.service.bindDataChanged(this.onDataChanged);
       this.handleSearchData();
     }
+    if (paths === '/' || paths === '/register') {
+      this.authController = new AuthController();
+    }
   }
 }
-
-export default LoginController;
