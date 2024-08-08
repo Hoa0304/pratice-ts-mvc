@@ -6,8 +6,8 @@ export class AuthController {
     private view: AuthView;
     private service: UserService;
 
-    constructor(view: AuthView) {
-        this.view = view;
+    constructor() {
+        this.view = new AuthView();
         this.service = new UserService();
         this.action();
     }
