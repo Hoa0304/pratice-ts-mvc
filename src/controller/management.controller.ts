@@ -1,13 +1,19 @@
 import Book from "../model/book.model";
 import BookService from "../services/book.service";
 import { ManagementView } from "../views";
+import BookView from "../views/book.views";
 import { LoginController } from "./book.controller";
 
-export class ManagementController extends LoginController {
-    constructor(view: ManagementView, service: BookService) {
-        super();
-        view = view as ManagementView;
+export class ManagementController  {
+   private view: ManagementView;
+    private service: BookService;
+    private views: BookView;
+    private loginController: LoginController | undefined;
+
+    constructor(views: BookView, service: BookService, view: ManagementView) {
+        this.view = view;
         this.service = service;
+        this.views = views;
         this.initActions();
     }
 
@@ -33,16 +39,18 @@ export class ManagementController extends LoginController {
     }
 
     async handleDelete(): Promise<void> {
-        await this.handleDisplayData();
+        if(this.loginController)
+        await this.loginController.handleDisplayData();
         const books = await this.service.getBooks();
         if (books)
         this.view.bindDelete(books, this.handleDeleteData.bind(this));
     }
 
     initActions(): void {
+        console.log('Initializing actions');
+        this.view.toggleForm();
         this.view.bindAddBook(this.handleAddBook);
         this.handleDelete();
         this.handleShowEditForm();
-
     }
 }

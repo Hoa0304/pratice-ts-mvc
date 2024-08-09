@@ -2,18 +2,21 @@ import { checkValidForm, collectData } from "../helper";
 import Book, { BookProps } from "../model/book.model";
 import BookView from "./book.views";
 import { EditForm } from "./components";
-import { Card, TBody } from "./modules";
 
 export class ManagementView {
     private data: BookView;
+    
     constructor() {
         this.data = new BookView();
     }
 
     bindAddBook(handle: (book: Book) => void): void {
+      console.log('Binding add book');
         const addBtn = document.querySelector('.form-button') as HTMLButtonElement;
+        
         addBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('Add book');
             const formAdd = document.querySelector('.form') as HTMLFormElement;
             if (checkValidForm(formAdd)) {
                 let dtb = collectData(formAdd);
@@ -140,7 +143,5 @@ export class ManagementView {
         });
       });
     });
-  }
-
-    
+  } 
 }
