@@ -26,3 +26,39 @@ export const passwordValidator = (value: string): string | undefined => {
   }
   return undefined;
 };
+
+export const imageValidator = (value: string): string | undefined => {
+  if (!value.trim()) {
+    return 'Image is required';
+  }
+  return undefined;
+};
+
+export const nameBookValidator = (value: string): string | undefined => {
+  if (value.trim().length < 3) {
+    return 'Name must be at least 3 characters long';
+  }
+  return undefined;
+};
+
+export const authorValidator = (value: string): string | undefined => {
+  if (value.trim().length < 3) {
+    return 'Author name must be at least 3 characters long';
+  }
+  return undefined;
+};
+
+export const yearValidator = (value: string): string | undefined => {
+  const year = parseInt(value);
+  if (isNaN(year) || year < 1900 || year > new Date().getFullYear()) {
+    return 'Year must be a valid year between 1900 and the current year';
+  }
+  return undefined;
+};
+
+export const categoryValidator = (value: string): string | undefined => {
+  if (value.trim().length < 3) {
+    return 'Category must be at least 3 characters long';
+  }
+  return undefined;
+};
